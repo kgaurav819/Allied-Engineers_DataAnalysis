@@ -39,7 +39,7 @@ const ChartSelector_ICE = () => {
                 <input type="checkbox"
                 checked={selectedChart.includes("corrosionRate")}
                 onChange={() => handleCheckboxChange("corrosionRate")} />
-                Consolidated Corrosion Rate
+                Corrosion Rate
             </label>
 
             <br />
