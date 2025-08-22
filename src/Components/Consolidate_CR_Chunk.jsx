@@ -108,7 +108,7 @@ const Consolidated_CR_Chunk = () => {
             },
              {
               label: 'CCR - Realistic mmpy',
-              data: RealisticValues,
+              data: dataOff,
               borderColor: '#e61cce',
               backgroundColor: '#e61cce',
               tension: 0.4,
@@ -182,3 +182,4 @@ const Consolidated_CR_Chunk = () => {
 };
 
 export default Consolidated_CR_Chunk;
+
