@@ -89,12 +89,12 @@ const AppContent = ({ markers, setMarkers }) => {
         <Route path="/consolidated_cr-chunks" element={<Consolidated_CR_Chunk />} />
 
         <Route path="/loss-chunks" element={<WallLoss_Chunk />} />
-        <Route path="/pressureChange-chunks" element={<PressureDrop_Chunks />} />
-        <Route path="/temperatureChange-chunks" element={<TemperatureDrop_Chunks />} />
-      <Route path="/velocity-chunks" element={<Velocity_Chunk/>} />
-      <Route path="/elevationprofile-chunks" element={<InclinationAngle_Chunks/>} />
-       <Route path="/flowRegime-chunks" element={<FlowRegime_Chunks/>} />
-       <Route path="/avgHL-chunks" element={<AvgHL_Chunks/>} />
+        <Route path="/pressureDrop-chunks" element={<PressureDrop_Chunks />} />
+        <Route path="/temperatureDrop-chunks" element={<TemperatureDrop_Chunks />} />
+      <Route path="/velocityProfile-chunks" element={<Velocity_Chunk/>} />
+      <Route path="/elevationProfile-chunks" element={<InclinationAngle_Chunks/>} />
+       <Route path="/flowregime-chunks" element={<FlowRegime_Chunks/>} />
+       <Route path="/avghl-chunks" element={<AvgHL_Chunks/>} />
       </Routes>
     </>
   );
