@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import ElevationChart from "./ElevationChart";
-import CorrosionRate from "./CR";
+// import CorrosionRate from "./CR";
 import Consolidated_CorrosionRate from "./Consolidated_CR";
 import WallLoss from "./WallLoss";
 import PressureChange from "./PressureChange";
