@@ -85,7 +85,9 @@ const AppContent = ({ markers, setMarkers }) => {
 
         {/*IC Routes*/}
         <Route path="/cr-chunks" element={<CR_Chunk />} />
-        <Route path="/consolidated_cr-chunks" element={<Consolidated_CorrosionRate />} />
+{/*         <Route path="/consolidated_cr-chunks" element={<Consolidated_CorrosionRate />} /> */}
+        <Route path="/consolidated_cr-chunks" element={<Consolidated_CR_Chunk />} />
+
         <Route path="/loss-chunks" element={<WallLoss_Chunk />} />
         <Route path="/pressureChange-chunks" element={<PressureChange_Chunks />} />
         <Route path="/temperatureChange-chunks" element={<TemperatureChange_Chunks />} />
