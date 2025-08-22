@@ -1,13 +1,15 @@
 import React, {useState} from "react";
 import ElevationChart from "./ElevationChart";
 import CorrosionRate from "./CR";
+import Consolidated_CorrosionRate from "./Consolidated_CR";
 import WallLoss from "./WallLoss";
 import PressureChange from "./PressureChange";
 import TemperatureChange from "./TemperatureChange";
-import VelocityChart from "./VelocityChart";
+import VelocityProfile from "./VelocityChart";
 import ElevationProfileChart from "./ElevationProfile";
-import FlowRegimeChart from "./FlowRegime";
-import AvgHLChart from "./AvgHL";
+import FlowRegime from "./FlowRegime";
+import AvgHL from "./AvgHL";
+import InclinationAngleChart from "./InclinationAngle";
 
 const ChartSelector_ICE = () => {
     console.log("ChartSelector_ICE rendered");
@@ -37,7 +39,7 @@ const ChartSelector_ICE = () => {
                 <input type="checkbox"
                 checked={selectedChart.includes("corrosionRate")}
                 onChange={() => handleCheckboxChange("corrosionRate")} />
-                Corrosion Rate
+                Consolidated Corrosion Rate
             </label>
 
             <br />
@@ -104,14 +106,14 @@ const ChartSelector_ICE = () => {
             </label>
 
             {selectedChart.includes("elevation") && <ElevationChart/>}
-            {selectedChart.includes("corrosionRate") && <CorrosionRate/>}
+            {selectedChart.includes("corrosionRate") && <Consolidated_CorrosionRate/>}
             {selectedChart.includes("wallLoss") && <WallLoss/>}
             {selectedChart.includes("pressureChange") && <PressureChange/>}
             {selectedChart.includes("temperatureChange") && <TemperatureChange/>}
-            {selectedChart.includes("velocityChart") && <VelocityChart/>}
+            {selectedChart.includes("velocityChart") && <VelocityProfile/>}
             {selectedChart.includes("profileAngleChart") && <ElevationProfileChart/>}
-            {selectedChart.includes("flowRegimeChart") && <FlowRegimeChart/>}
-            {selectedChart.includes("avgHLChart") && <AvgHLChart/>}
+            {selectedChart.includes("flowRegimeChart") && <FlowRegime/>}
+            {selectedChart.includes("avgHLChart") && <AvgHL/>}
             </div>
             )
 }
