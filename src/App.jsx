@@ -3,6 +3,10 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import FileUploader from './Components/FileUpload';
 import { FileContext, FileProvider } from './Components/FileContext';
+import Navbar from './Components/Navbar'
+import Footer from './Components/footer';
+
+//XLI CHart Chart Import
 import ChartSelector from './Components/chartSelector';
 import CPCIPS_Chunks from './Components/CP_CIPS_Chunk';
 import ACVG_Chunks from './Components/ACVG_Chunk';
@@ -11,12 +15,14 @@ import DOC_Chunks from './Components/DOC_Chunk';
 import DCVG_Chunks from './Components/DCVG_Chunk';
 import Attenuation_Chunks from './Components/Attenuation_Chunk';
 import ACVG_mvChunk from './Components/ACVG_mvChunk';
+import CurrentDensity_Chunk from './Components/CurrentDensity_Chunk';
+
+//IC Chunk ChartImport
+import ChartSelector_ICE from './Components/ChartSelector_ICE';
 import Elevation_Chunks from './Components/Elevation_chunk';
 import CR_Chunk from './Components/CR_Chunk';
+import Consolidated_CR_Chunk from './Components/Consolidate_CR_Chunk'
 import WallLoss_Chunk from './Components/WallLoss_Chunk';
-import ChartSelector_ICE from './Components/ChartSelector_ICE';
-import Navbar from './Components/Navbar'
-import Footer from './Components/footer';
 import PressureChange_Chunks from './Components/PressureChange_Chunk';
 import TemperatureChange_Chunks from './Components/TemperatureChange_Chunk';
 import Velocity_Chunk from './Components/Velocity_Chunk';
@@ -25,7 +31,7 @@ import FlowRegime_Chunks from './Components/FlowRegime_Chunk';
 import AvgHL_Chunks from './Components/AvgHL_Chunk';
 
 import MapTilerPolyline from './Components/MapWithPolyline';
-import CurrentDensity_Chunk from './Components/CurrentDensity_Chunk';
+
 
 function App() {
 
@@ -66,6 +72,7 @@ const AppContent = ({ markers, setMarkers }) => {
           }
         />
         {/* ✅ Chunk pages for each chart type */}
+        {/*XLI Routes*/}
         <Route path="/cpcips-chunks" element={<CPCIPS_Chunks />} />
         <Route path="/acvg-chunks" element={<ACVG_Chunks />} />
         <Route path="/acpsp-chunks" element={<ACPSP_Chunks />} />
@@ -75,7 +82,10 @@ const AppContent = ({ markers, setMarkers }) => {
         <Route path="/acvg_mv-chunks" element={<ACVG_mvChunk />} />
         <Route path="/currentDensity-chunks" element={<CurrentDensity_Chunk />} />
         <Route path="/rolledUp-chunks" element={<Elevation_Chunks />} />
+
+        {/*IC Routes*/}
         <Route path="/cr-chunks" element={<CR_Chunk />} />
+        <Route path="/consolidated_cr-chunks" element={Consolidated_CorrosionRate />} />
         <Route path="/loss-chunks" element={<WallLoss_Chunk />} />
         <Route path="/pressureChange-chunks" element={<PressureChange_Chunks />} />
         <Route path="/temperatureChange-chunks" element={<TemperatureChange_Chunks />} />
