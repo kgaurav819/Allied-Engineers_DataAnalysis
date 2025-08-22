@@ -63,8 +63,8 @@ const Elevation_Chunks = () => {
              {
               label: 'Water Holdup (ABBL)',
               data: dataOff,
-              borderColor: '#FF00FF',
-              backgroundColor: '#FF00FF',
+              borderColor: '#1c95e6',
+              backgroundColor: '#1c95e6',
               tension: 0.4,
               fill: false,
               yAxisID: 'y1', //Secondary Y-Axis
