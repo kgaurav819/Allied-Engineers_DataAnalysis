@@ -68,8 +68,8 @@ const PressureChange = () => {
         label: `${yKey2}`,
         data: pressureValues,
         fill: false,
-        borderColor: '#FF8C00',
-        backgroundColor: '#FF8C00',
+        borderColor: '#24db0f',
+        backgroundColor: '#24db0f',
         tension: 0.4,
         yAxisID: 'y1', //Secondary Axis
         pointRadius: 0,
