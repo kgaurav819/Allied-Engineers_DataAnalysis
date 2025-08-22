@@ -448,8 +448,24 @@ const InclinationAngleChart = () => {
       ) : (
         <p>No data available</p>
       )}
+
+           {/* Button to show chunks */}
+      <div style={{ marginTop: "2rem", marginBottom: "1rem" }}>
+        <button
+          style={{ fontSize: "18px", cursor: "pointer" }}
+          onClick={() => {
+            const input = prompt("Enter chunk size in meters: ");
+            if (input && !isNaN(input)) {
+              window.open(`/elevationprofile-chunks?chunk=${input}`, "_blank");
+            }
+          }}
+        >
+          Show Section-wise Charts
+        </button>
+      </div>
     </div>
   );
 };
 
 export default InclinationAngleChart;
+
