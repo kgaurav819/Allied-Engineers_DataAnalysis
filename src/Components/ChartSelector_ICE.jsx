@@ -111,7 +111,7 @@ const ChartSelector_ICE = () => {
             {selectedChart.includes("pressureChange") && <PressureChange/>}
             {selectedChart.includes("temperatureChange") && <TemperatureChange/>}
             {selectedChart.includes("velocityChart") && <VelocityProfile/>}
-            {selectedChart.includes("profileAngleChart") && <ElevationProfileChart/>}
+            {selectedChart.includes("profileAngleChart") && <InclinationAngleChart/>}
             {selectedChart.includes("flowRegimeChart") && <FlowRegime/>}
             {selectedChart.includes("avgHLChart") && <AvgHL/>}
             </div>
