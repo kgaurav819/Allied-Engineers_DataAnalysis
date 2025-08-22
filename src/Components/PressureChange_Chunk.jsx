@@ -63,8 +63,8 @@ const PressureChange_Chunks = () => {
             {
               label: 'Pressure Change',
               data: dataOff,
-              borderColor: '#FF8C00',
-              backgroundColor: '#FF8C00',
+              borderColor: '#24db0f',
+              backgroundColor: '#24db0f',
               tension: 0.4,
               fill: false,
               yAxisID: 'y1',  //Primary Y-Axis
