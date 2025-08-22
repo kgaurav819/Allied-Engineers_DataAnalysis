@@ -26,7 +26,7 @@ import WallLoss_Chunk from './Components/WallLoss_Chunk';
 import PressureDrop_Chunks from './Components/PressureChange_Chunk';
 import TemperatureDrop_Chunks from './Components/TemperatureChange_Chunk';
 import Velocity_Chunk from './Components/Velocity_Chunk';
-import ElevationProfile_Chunks from './Components/ElevationProfile_Chunk';
+import InclinationAngle_Chunks from './Components/InclinationAngle_Chunk';
 import FlowRegime_Chunks from './Components/FlowRegime_Chunk';
 import AvgHL_Chunks from './Components/AvgHL_Chunk';
 
@@ -92,7 +92,7 @@ const AppContent = ({ markers, setMarkers }) => {
         <Route path="/pressureChange-chunks" element={<PressureDrop_Chunks />} />
         <Route path="/temperatureChange-chunks" element={<TemperatureDrop_Chunks />} />
       <Route path="/velocity-chunks" element={<Velocity_Chunk/>} />
-      <Route path="/elevationprofile-chunks" element={<ElevationProfile_Chunks/>} />
+      <Route path="/elevationprofile-chunks" element={<InclinationAngle_Chunks/>} />
        <Route path="/flowRegime-chunks" element={<FlowRegime_Chunks/>} />
        <Route path="/avgHL-chunks" element={<AvgHL_Chunks/>} />
       </Routes>
