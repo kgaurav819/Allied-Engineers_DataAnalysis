@@ -19,6 +19,7 @@ import CurrentDensity_Chunk from './Components/CurrentDensity_Chunk';
 
 //IC Chunk ChartImport
 import ChartSelector_ICE from './Components/ChartSelector_ICE';
+import Elevation_Chunks from './Elevation_chunk';
 // import ElevationProfile_Chunks from './Components/ElevationProfile_Chunk';
 import CR_Chunk from './Components/CR_Chunk';
 import Consolidated_CR_Chunk from './Components/Consolidate_CR_Chunk'
