@@ -222,29 +222,51 @@ const InclinationAngle_Chunks = () => {
               yAxisID: 'y',  //Primary Y-Axis
               pointRadius:0,
             },
-             {
+
+                    {
               label: 'DG critical angle',
               data: dataOff,
               borderColor: '#24db0f',
               backgroundColor: '#24db0f',
               tension: 0.4,
               fill: false,
-              yAxisID: 'y1', //Secondary Y-Axis
-               pointRadius: 4,
-        borderWidth: 0,
-         showLine: false,
+              yAxisID: 'y1',  //Primary Y-Axis
+              pointRadius:0,
             },
-            {
-              label: 'Elevation profile angle',
+        //      {
+        //       label: 'DG critical angle',
+        //       data: dataOff,
+        //       borderColor: '#24db0f',
+        //       backgroundColor: '#24db0f',
+        //       tension: 0.4,
+        //       fill: false,
+        //       yAxisID: 'y1', //Secondary Y-Axis
+        //        pointRadius: 4,
+        // borderWidth: 0,
+        //  showLine: false,
+        //     },
+        //     {
+        //       label: 'Elevation profile angle',
+        //       data: elevationAnglePoints,
+        //       borderColor: 'red',
+        //       backgroundColor: 'red',
+        //       tension: 0.4,
+        //       fill: false,
+        //       yAxisID: 'y1', //Secondary Y-Axis
+        //        pointRadius: 4,
+        // borderWidth: 0,
+        //  showLine: false,
+        //     },
+
+                        {
+              label: 'Elevation Profile Angle',
               data: elevationAnglePoints,
               borderColor: 'red',
               backgroundColor: 'red',
               tension: 0.4,
               fill: false,
-              yAxisID: 'y1', //Secondary Y-Axis
-               pointRadius: 4,
-        borderWidth: 0,
-         showLine: false,
+              yAxisID: 'y1',  //Primary Y-Axis
+              pointRadius:0,
             },
         
           ],
@@ -314,5 +336,6 @@ const InclinationAngle_Chunks = () => {
 };
 
 export default InclinationAngle_Chunks;
+
 
 
