@@ -19,7 +19,7 @@ import CurrentDensity_Chunk from './Components/CurrentDensity_Chunk';
 
 //IC Chunk ChartImport
 import ChartSelector_ICE from './Components/ChartSelector_ICE';
-import ElevationProfile_Chunks from './Components/ElevationProfile_Chunk';
+// import ElevationProfile_Chunks from './Components/ElevationProfile_Chunk';
 import CR_Chunk from './Components/CR_Chunk';
 import Consolidated_CR_Chunk from './Components/Consolidate_CR_Chunk'
 import WallLoss_Chunk from './Components/WallLoss_Chunk';
@@ -92,9 +92,11 @@ const AppContent = ({ markers, setMarkers }) => {
         <Route path="/pressureDrop-chunks" element={<PressureDrop_Chunks />} />
         <Route path="/temperatureDrop-chunks" element={<TemperatureDrop_Chunks />} />
       <Route path="/velocityProfile-chunks" element={<Velocity_Chunk/>} />
-      <Route path="/elevationprofile-chunks" element={<ElevationProfile_Chunks/>} />
+{/*       <Route path="/elevationprofile-chunks" element={<ElevationProfile_Chunks/>} /> */}
        <Route path="/flowregime-chunks" element={<FlowRegime_Chunks/>} />
        <Route path="/avghl-chunks" element={<AvgHL_Chunks/>} />
+          <Route path="/elevationprofile-chunks" element={<InclinationAngle_Chunks/>} />
+        
       </Routes>
     </>
   );
