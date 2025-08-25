@@ -220,13 +220,13 @@ const VelocityProfile_Chunk = () => {
       item['Superficial gas velocity (ft/s)'] &&
       item['Superficial water velocity (ft/s)']&&
       item['Mixture velocity (ft/s)']&&
-      item['Superficial Liquid Velocity (Hydrocarbon) (ft/s)']&&
+      item['Superficial Liquid Velocity  (Hydrocarbon) (ft/s)']&&
       item['Elevation (m)']&&
       !isNaN(item['Chainage (m)']) &&
       !isNaN(item['Superficial gas velocity (ft/s)'])&&
       !isNaN(item['Superficial water velocity (ft/s)'])&&
       !isNaN(item['Mixture velocity (ft/s)'])&&
-      !isNaN(item['Superficial Liquid Velocity (Hydrocarbon) (ft/s)'])&&
+      !isNaN(item['Superficial Liquid Velocity  (Hydrocarbon) (ft/s)'])&&
       !isNaN(item ['Elevation (m)'])
   );
 
@@ -246,7 +246,7 @@ const VelocityProfile_Chunk = () => {
       const dataOff = chunk.map(item => Number(item['Superficial water velocity (ft/s)']));
       const elevationValues = chunk.map(item => Number(item['Elevation (m)']));
       const generalValues = chunk.map(item => Number(item['Mixture velocity (ft/s)']));
-      const liquidVelocity = chunk.map(item => Number(item['Superficial Liquid Velocity (Hydrocarbon) (ft/s)']))
+      const liquidVelocity = chunk.map(item => Number(item['Superficial Liquid Velocity  (Hydrocarbon) (ft/s)']))
   
 
       chunks.push({
@@ -280,7 +280,7 @@ const VelocityProfile_Chunk = () => {
             },
 
             {
-              label: 'Superficial Liquid Velocity (Hydrocarbon) (ft/s)',
+              label: 'Superficial Liquid Velocity  (Hydrocarbon) (ft/s)',
               data: liquidVelocity,
               borderColor: '#24db0f',
               backgroundColor: '#24db0f',
@@ -300,7 +300,7 @@ const VelocityProfile_Chunk = () => {
               fill: false,
               pointRadius: 4,
               borderWidth: 0,
-              showLine: true,
+              showLine: false,
               yAxisID: 'y1',
             },
         
