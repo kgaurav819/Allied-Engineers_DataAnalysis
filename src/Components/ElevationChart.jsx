@@ -158,7 +158,7 @@
 
 
 
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext } from "react";
 import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -170,7 +170,6 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import annotationPlugin from 'chartjs-plugin-annotation';
 import { FileContext } from "./FileContext";
 
 ChartJS.register(
@@ -181,7 +180,6 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
-  annotationPlugin
 );
 
 // Helper function to parse numbers safely
@@ -211,23 +209,7 @@ const ElevationChart = () => {
         )
     : [];
 
-  //Min and Max Thresholds
-  const [thresholdMin, setThresholdMin] = useState (50);
-  const [thresholdMax, setThresholdMax] = useState (500);
-  const [error, setError] = useState ("");
 
-  useEffect (() => {
-    //Validate Thresholds
-     if (
-      thresholdMin < 50 ||
-      thresholdMax > 500 ||
-      thresholdMin > thresholdMax
-    ) {
-      setError("Threshold must be between 50 and 500 and min <= max");
-    } else {
-      setError("");
-    }
-  }, [thresholdMin, thresholdMax]);
 
   // Elevation points (with rounded chainage)
   const elevationPoints = filteredData.map((row) => ({
@@ -274,36 +256,6 @@ const ElevationChart = () => {
     plugins: {
       legend: { position: "top" },
       title: { display: true, text: "Elevation & Water HoldUp vs Chainage" },
-      annotation: {
-        annotations: {
-          thresholdMinLine: {
-            type: 'line',
-            yMin: thresholdMin,
-            yMax: thresholdMin,
-            borderColor: 'red',
-            borderWidth: 2,
-            label: {
-              enabled: true,
-              content: `Min: ${thresholdMin}`,
-              position: 'start',
-              backgroundColor: 'rgba(255, 0, 0, 0.7)',
-            },
-          },
-          thresholdMaxLine: {
-            type: 'line',
-            yMin: thresholdMax,
-            yMax: thresholdMax,
-            borderColor: 'green',
-            borderWidth: 2,
-            label: {
-              enabled: true,
-              content: `Max: ${thresholdMax}`,
-              position: 'end',
-              backgroundColor: 'rgba(0, 128,0,0.7)',
-            },
-          },
-        },
-      },
     },
     scales: {
       x: {
@@ -341,26 +293,6 @@ const ElevationChart = () => {
       }}
     >
       <h2>Liquid HoldUp</h2>
-
-       <div style={{ marginBottom: '1rem'}}>
-    <label>
-      Min Threshold:
-      <input type="number"
-       value={thresholdMin}
-       onChange={(e) => setThresholdMin(Number(e.target.value))} style={{ marginLeft: '0.5rem', marginRight: '1rem'}}
-      />
-    </label>
-
-    <label>
-      Max Threshold:
-      <input type="number"
-       value={thresholdMax}
-       onChange={(e) => setThresholdMax(Number(e.target.value))} style={{ marginLeft: '0.5rem', marginRight: '1rem'}}
-      />
-    </label>
-    </div>
-
-       {error && <p style={{ color: "red" }}>{error}</p>}
       
       {filteredData.length > 0 ? (
         <Line data={data} options={options} />
