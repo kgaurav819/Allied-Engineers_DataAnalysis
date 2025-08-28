@@ -158,7 +158,7 @@
 
 
 
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -170,6 +170,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import annotationPlugin from 'chartjs-plugin-annotation';
 import { FileContext } from "./FileContext";
 
 ChartJS.register(
@@ -179,7 +180,8 @@ ChartJS.register(
   LineElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  annotationPlugin
 );
 
 // Helper function to parse numbers safely
@@ -208,6 +210,24 @@ const ElevationChart = () => {
             parseNumber(b["Chainage (m)"])
         )
     : [];
+
+  //Min and Max Thresholds
+  const [thresholdMin, setThresholdMin] = useState (50);
+  const [thresholdMax, setThresholdMax] = useState (500);
+  const [error, setError] = useState ("");
+
+  useEffect (() => {
+    //Validate Thresholds
+     if (
+      thresholdMin < 50 ||
+      thresholdMax > 500 ||
+      thresholdMin > thresholdMax
+    ) {
+      setError("Threshold must be between 50 and 500 and min <= max");
+    } else {
+      setError("");
+    }
+  }, [thresholdMin, thresholdMax]);
 
   // Elevation points (with rounded chainage)
   const elevationPoints = filteredData.map((row) => ({
@@ -291,6 +311,27 @@ const ElevationChart = () => {
       }}
     >
       <h2>Liquid HoldUp</h2>
+
+       <div style={{ marginBottom: '1rem'}}>
+    <label>
+      Min Threshold:
+      <input type="number"
+       value={thresholdMin}
+       onChange={(e) => setThresholdMin(Number(e.target.value))} style={{ marginLeft: '0.5rem', marginRight: '1rem'}}
+      />
+    </label>
+
+    <label>
+      Max Threshold:
+      <input type="number"
+       value={thresholdMax}
+       onChange={(e) => setThresholdMax(Number(e.target.value))} style={{ marginLeft: '0.5rem', marginRight: '1rem'}}
+      />
+    </label>
+    </div>
+
+       {error && <p style={{ color: "red" }}>{error}</p>}
+      
       {filteredData.length > 0 ? (
         <Line data={data} options={options} />
       ) : (
