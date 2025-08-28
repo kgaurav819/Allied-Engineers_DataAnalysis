@@ -274,6 +274,36 @@ const ElevationChart = () => {
     plugins: {
       legend: { position: "top" },
       title: { display: true, text: "Elevation & Water HoldUp vs Chainage" },
+      annotation: {
+        annotations: {
+          thresholdMinLine: {
+            type: 'line',
+            yMin: thresholdMin,
+            yMax: thresholdMin,
+            borderColor: 'red',
+            borderWidth: 2,
+            label: {
+              enabled: true,
+              content: `Min: ${thresholdMin}`,
+              position: 'start',
+              backgroundColor: 'rgba(255, 0, 0, 0.7)',
+            },
+          },
+          thresholdMaxLine: {
+            type: 'line',
+            yMin: thresholdMax,
+            yMax: thresholdMax,
+            borderColor: 'green',
+            borderWidth: 2,
+            label: {
+              enabled: true,
+              content: `Max: ${thresholdMax}`,
+              position: 'end',
+              backgroundColor: 'rgba(0, 128,0,0.7)',
+            },
+          },
+        },
+      },
     },
     scales: {
       x: {
